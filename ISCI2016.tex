@@ -335,7 +335,8 @@ Where \textit{CosSim(x,y)} represents the cosine of the angle between the two ve
 (profiles) of the items being compared. Collaborative filtering algorithm
 obtains a user neighborhood (KNN-nearest neighbors) and uses the Pearson
 correlation for the similarity between neighboring users and the current user,
-the \textit{more similar} users will be providing information for the user prediction.The formula of Pearson correlation \cite{ricci2011introduction} is depicted in equation 2.
+the \textit{more similar} users will be providing information for the user prediction.
+The formula of Pearson correlation \cite{ricci2011introduction} is depicted in equation 2.
 
 \begin{equation}
 \displaystyle
@@ -345,8 +346,8 @@ P(U_{x}, U_{y}) = {\sum_{i=1}^{n}(U_{xi} - \overline{U})^2 (U_{yi}- \overline{U}
 
 Where ${P(U_{x}, U_{y})}$ is the correlation coefficient from -1.0 to 1.0, users with the
 highest positive correlation are considered \textit{more similar}. Then, the process
-when collaborative filtering makes predictions \cite{shani2011evaluating} of an item $i$ for the user $u$, 
-uses equation 3.
+when collaborative filtering makes predictions \cite{shani2011evaluating} of an item $i$ 
+for the user $u$, uses equation 3.
 
 \begin{equation}
 P(u,i) = {\sum_{i=1}^{n}(S_{j,u} * C_{j,i}) \over {\sum_{i=1}^{n}(S_{j,u})} }
@@ -517,7 +518,10 @@ TripAdvisor v2 & FC + Post-filtering  & 0.504  \\
 \end{table}
 
 
-The fundament of content-based algorithm is the cosine similarity; this means that if similarity value among items is high, the recommendations will improve the degree of user satisfaction. This is observed when calculating the similarity average in each dataset as shown in Table \ref{tab:5}.
+The fundament of content-based algorithm is the cosine similarity; 
+this means that if similarity value among items is high, the recommendations 
+will improve the degree of user satisfaction. This is observed when calculating 
+the similarity average in each dataset as shown in Table \ref{tab:5}.
 
 \begin{table}
 \centering
