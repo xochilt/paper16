@@ -87,9 +87,6 @@ grestore
 
 
 \title{Context-Aware Recommender System Using Post-Filtering And Fuzzy Logic
-%\thanks{Grants or other notes
-%about the article that should go on the front page should be
-%placed here. General acknowledgments should be placed at the end of the article.}
 }
 \subtitle{}
 
@@ -105,7 +102,7 @@ grestore
 %             \emph{Present address:} of F. Author  %  if needed
            \and
            Mario Garcia-Valdez\at
-             mariosky@gmail.com
+             mario@tectijuana.edu.mx
 }
 
 \date{Received: date / Accepted: date}
@@ -114,7 +111,7 @@ grestore
 \maketitle
 
 \begin{abstract} 
-
+%Al último revisamos el abstract
 Contextual recommendations are implemented in recommender systems to improve
 user satisfaction. A recommender system makes accurate and suitable
 recommendations for a particular situation reaching personalized
@@ -122,6 +119,7 @@ recommendations.
 %%Mario: Creo que es mejor empezar aqui:
 The context provides information relevant to the recommender
 system and is used as a filter for selection of relevant items for the user.
+
 This paper presents a context-aware recommender system, which uses techniques
 based on collaborative filtering and content-based as well as fuzzy rules to
 recommend items in context. The dataset used to test the system is Trip Advisor.
@@ -137,12 +135,15 @@ Fuzzy logic \and  Recommender systems}
 
 Nowadays, Internet provides users convenient tools to improve tasks in daily
 life in order to know the needs of millions of users, this has disadvantages
-that leads to overload information. For example, an online store can offer
-thousands of items in differ  ent categories for the user, as result, the user
+that leads to information overload . % al revés
+For example, an online store can offer
+thousands of items in different categories for the user, as result, the user
 could find in a complex situation, where the items that the user want to buy are
 contained in a list of thousands of items in the online store. Then, recommender
 systems are designed for suggest items that are adapted to needs and preferences
-of users \cite{ricci2011introduction}. There are two common  techniques for
+of users \cite{ricci2011introduction}. 
+
+There are two common  techniques for
 recommendations: 1) collaborative filtering and, 2) content-based. These
 algorithms can be combined in a hybrid system \cite{burke2007hybrid}.   The
 highlight of traditional recommender systems is that considers only two types of
@@ -163,7 +164,9 @@ relevance for the domain such as in \cite{baltrunas2011context}.  For achieve
 this purpose, researchers propose new techniques such as in
 \cite{said2011inferring},\cite{zheng2014splitting} and
 \cite{baltrunas2009context2} , where a splitting of rating matrix is used to
-sepate the context and it adjust it in recommendation process.   In recent works
+sepate the context and it adjust it in recommendation process.  
+
+In recent works
 such as \cite{zhengcorrelation} and \cite{baltrunas2011matrix} , the matrix
 factorization technique have been improved for adding context, getting better
 results than standard matrix factorization technique \cite{koren2009matrix}.
@@ -178,6 +181,7 @@ integrated in new mobile applications such as InCarMusic
 \cite{baltrunas2011incarmusic},  ReRex \cite{baltrunas2011mobile},  UbiquiTOUS
 \cite{bellavista2012survey} and Appazaar \cite{bohmer2010contextualizing} in
 order to meet the needs of users. \\
+
 The content of this paper is presented as
 follows: section 2 describes the techniques for Recommender Systems, section 3
 explains the elements of the method proposed for Context- Aware Recommender
@@ -186,6 +190,16 @@ used to test the Context-Aware Recommender System, section 5 explains the
 results of experiments to evaluate the system, the main features of the data and
 finally, the section 6, explains the conclusions and proposals for future work.
 %\cite{hussein2013context}, \cite{kahng2011ranking}.
+
+% A la sección le hace falta corregir el inglés, pero la veo más como el
+% estado del arte, en la Intro debes de explicar:
+% 1. El problema- creo que eso lo haces bien.
+% 2. De manera resumida la justificación de la propuesta. 
+% 3. Como está organizado el contenido. 
+
+% Creo que la segunda sección se debería llamar estado del arte.  Y llevarte 
+% el segundo párrafo.
+
 
 \section{ Recommendation techniques } \label{sec:2} 
 
@@ -259,6 +273,12 @@ be one of the most used techniques to help users find relevant items for them
   it means that can be more informative and relevant within the space of items.
 
 
+% Que otros algoritmos hibridos existen que se enfoquen al contexto?
+% Si lo que se presenta es el sistema de restaurantes, falta hablar de los otros
+% Reja, etc.
+
+% Después hablar del problema que vamos a atacar
+
 \section{Proposed method}\label{sec:3}
 
 
@@ -304,6 +324,9 @@ The fuzzy rules in the FIS (Fig.\ref{fig:fis}) are:
 \item \texttt{If RatingAverage is high and UserParticipation is sufficient   then recommendation is high.}
 \end{enumerate} 
 
+% Se debe justificar el uso del FIS, que ventajas tiene? Que otras opciones hay?
+% Se tiene que optimizar? Se puede optimizar? Deberíamos optimizarlo.
+
 % For two-column wide figures use
 \begin{figure*}
 \captionsetup{justification=centering,margin=2cm}
@@ -320,7 +343,7 @@ The fuzzy rules in the FIS (Fig.\ref{fig:fis}) are:
 \label{fig:fis}       % Give a unique label
 \end{figure*}
 
-Content-based algorithm uses cosine similarity to compare the binary vectors
+Content-based algorithm uses cosine similarity to compare the binary vectors % Debes explicar por que esa medida de similaridad.
 representing the profile of each item, thereby obtaining a numerical value that
 determines similarity, based on a threshold. In other words, it makes a
 comparison of profiles of each item to determine the \textit{most similar} to
@@ -346,7 +369,7 @@ P(U_{x}, U_{y}) = {\sum_{i=1}^{n}(U_{xi} - \overline{U})^2 (U_{yi}- \overline{U}
 \end{equation}
 \\
 
-Where ${P(U_{x}, U_{y})}$ is the correlation coefficient from -1.0 to 1.0, users with the
+Where ${P(U_{x}, U_{y})}$ is the correlation coefficient from -1.0 to 1.0, users with the  % De nuevo justificar la correlación
 highest positive correlation are considered \textit{more similar}. Then, the process
 when collaborative filtering makes predictions \cite{shani2011evaluating} of an item $i$ 
 for the user $u$, uses equation 3.
